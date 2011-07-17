@@ -21,7 +21,7 @@
 * Hot deploy
 * Full stack: Hibernate, memcached, [sistema de módulos](http://www.playframework.org/modules)
 * Compilación automática y errores en el navegador
-* REST
+* Stateless model
 * Integración con WebSockets
 * Sistema de plantillas basado en groovy
 
@@ -287,11 +287,11 @@ test/data.yml
 
 	User(user1):
 	   username: user1
-	   password: secretPassword1234
+	   password: user1
 	
 	User(user2):
 	   username: user2
-	   password: ultraSecretPassword
+	   password: user2
 	
 	Tweet(tweet1):
 	    msg: "Este es el primer tweet"
@@ -400,6 +400,11 @@ app/controller/Timeline.java
 		
 	}
 
+
+conf/routes
+
+	GET     /    Timeline.index
+
 ---
 
 # Creando el Timeline (Vista)
@@ -492,6 +497,8 @@ Añadir rutas por defecto a conf/routes
 	
 	*      /                module:secure
 
+**Reiniciar el servidor**
+
 ---
 
 # Módulo Secure (Uso)
@@ -547,7 +554,7 @@ F5 en el proyecto de eclipse
 
 Añadir rutas por defecto a conf/routes
 	
-	*      /                module:crud
+	*      /admin           module:crud
 
 ---
 	
@@ -594,14 +601,14 @@ Copia estos archivos en las rutas indicadas para personalizar el aspecto de la p
 
 # Enviando tweets
 
-views/Timeline/timeline.html
+views/Timeline/index.html
 
 	<div class="happening">
-	#{form @Timeline.addTweet()}
+	#{form @Timeline.addTweet(), id:"tweet-form"}
 		<label>What's happening</label>
-		<textarea name="tweet.msg"> </textarea>
+		<textarea name="tweet.msg" id="tweet-msg"> </textarea>
 		<div class="button_container">
-			<input type="submit" value="Tweet">
+			<input type="submit" value="Tweet" id="tweet-submit">
 		</div>
 	#{/form}
 	</div>
@@ -613,7 +620,7 @@ controller/Timeline.java
 		tweet.date = new Date();
 		tweet.save();
 		
-		timeline(); //redirige de nuevo al timeline
+		index(); //redirige de nuevo al timeline
 	}
 
 conf/routes
@@ -641,8 +648,22 @@ controllers/Timeline.java
 			tweet.date = new Date();
 			tweet.save();
 		}
-		timeline();
+		index();
 	}
+	
+---
+
+# Mostrando errores de validación
+
+view/Timeline/index.html
+
+	#{ifErrors}
+	<ul class="errors">
+	#{errors}
+	    <li>${error}</li>
+	#{/errors}
+	</ul>
+	#{/ifErrors}	
 
 ---
 	
@@ -667,13 +688,13 @@ Accedemos a la página
 
 ---
 
-# Ooopsss
+# Ooops Circular Reference
 
 ![Circular Reference](img/circularReference.png)
 
 ---
 
-# ¿Por qué da error?
+# El problema con renderJSON
 
 El problema y la solución está ampliamente explicado en este [post](http://www.lunatech-research.com/archives/2011/04/20/play-framework-better-json-serialization-flexjson).
 
@@ -710,6 +731,14 @@ Por último actualizamos la configuración de eclipse
 
 	play eclipsify
 
+---
+
+# Filtrando los campos
+
+	public static void tweets(){
+	    List<Tweet> tweets = Tweet.find("order by date desc").fetch();
+	    renderJSON(new JSONSerializer().include("msg", "date", "author.username").exclude("*").serialize(tweets));
+	}
 
 ---
 
@@ -784,6 +813,7 @@ controller.Timeline
 
 conf/routes
 	
+	GET     /{user}                        Timeline.index
 	GET     /api/tweets/{user}             Timeline.tweets
 
 ---
@@ -916,4 +946,7 @@ views/Timeline/index.html
 	</div>
 	#{/if}
 
+---
+
+# Y eso es todo...
 	

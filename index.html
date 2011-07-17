@@ -85,7 +85,7 @@
             </aside>
             
             <aside class="page_number">
-              1/46
+              1/49
             </aside>
           </footer>
         </div>
@@ -120,7 +120,7 @@
             </aside>
             
             <aside class="page_number">
-              2/46
+              2/49
             </aside>
           </footer>
         </div>
@@ -145,7 +145,7 @@
 <li>Hot deploy</li>
 <li>Full stack: Hibernate, memcached, <a href="http://www.playframework.org/modules">sistema de módulos</a></li>
 <li>Compilación automática y errores en el navegador</li>
-<li>REST</li>
+<li>Stateless model</li>
 <li>Integración con WebSockets</li>
 <li>Sistema de plantillas basado en groovy</li>
 </ul></section>
@@ -164,7 +164,7 @@
             </aside>
             
             <aside class="page_number">
-              3/46
+              3/49
             </aside>
           </footer>
         </div>
@@ -197,7 +197,7 @@
             </aside>
             
             <aside class="page_number">
-              4/46
+              4/49
             </aside>
           </footer>
         </div>
@@ -228,7 +228,7 @@
             </aside>
             
             <aside class="page_number">
-              5/46
+              5/49
             </aside>
           </footer>
         </div>
@@ -260,7 +260,7 @@
             </aside>
             
             <aside class="page_number">
-              6/46
+              6/49
             </aside>
           </footer>
         </div>
@@ -296,7 +296,7 @@ play run
             </aside>
             
             <aside class="page_number">
-              7/46
+              7/49
             </aside>
           </footer>
         </div>
@@ -331,7 +331,7 @@ play run
             </aside>
             
             <aside class="page_number">
-              8/46
+              8/49
             </aside>
           </footer>
         </div>
@@ -362,7 +362,7 @@ play run
             </aside>
             
             <aside class="page_number">
-              9/46
+              9/49
             </aside>
           </footer>
         </div>
@@ -407,7 +407,7 @@ play run
             </aside>
             
             <aside class="page_number">
-              10/46
+              10/49
             </aside>
           </footer>
         </div>
@@ -437,7 +437,7 @@ play run
             </aside>
             
             <aside class="page_number">
-              11/46
+              11/49
             </aside>
           </footer>
         </div>
@@ -492,7 +492,7 @@ public class User extends Model {
             </aside>
             
             <aside class="page_number">
-              12/46
+              12/49
             </aside>
           </footer>
         </div>
@@ -546,7 +546,7 @@ public class Tweet extends Model {
             </aside>
             
             <aside class="page_number">
-              13/46
+              13/49
             </aside>
           </footer>
         </div>
@@ -580,7 +580,7 @@ public class Tweet extends Model {
             </aside>
             
             <aside class="page_number">
-              14/46
+              14/49
             </aside>
           </footer>
         </div>
@@ -631,7 +631,7 @@ tlp
             </aside>
             
             <aside class="page_number">
-              15/46
+              15/49
             </aside>
           </footer>
         </div>
@@ -674,7 +674,7 @@ llamada al getter
             </aside>
             
             <aside class="page_number">
-              16/46
+              16/49
             </aside>
           </footer>
         </div>
@@ -730,7 +730,7 @@ public class ModelTest extends UnitTest {
             </aside>
             
             <aside class="page_number">
-              17/46
+              17/49
             </aside>
           </footer>
         </div>
@@ -749,11 +749,11 @@ public class ModelTest extends UnitTest {
 <p>test/data.yml</p>
 <pre><code>User(user1):
    username: user1
-   password: secretPassword1234
+   password: user1
 
 User(user2):
    username: user2
-   password: ultraSecretPassword
+   password: user2
 
 Tweet(tweet1):
     msg: "Este es el primer tweet"
@@ -778,7 +778,7 @@ Tweet(tweet2):
             </aside>
             
             <aside class="page_number">
-              18/46
+              18/49
             </aside>
           </footer>
         </div>
@@ -827,7 +827,7 @@ Tweet(tweet2):
             </aside>
             
             <aside class="page_number">
-              19/46
+              19/49
             </aside>
           </footer>
         </div>
@@ -875,7 +875,7 @@ db=mem
             </aside>
             
             <aside class="page_number">
-              20/46
+              20/49
             </aside>
           </footer>
         </div>
@@ -926,7 +926,7 @@ public class Bootstrap extends Job {
             </aside>
             
             <aside class="page_number">
-              21/46
+              21/49
             </aside>
           </footer>
         </div>
@@ -951,6 +951,9 @@ Primera aproximación listando todos los tweets de la base de datos.</p>
     }
 
 }
+</code></pre>
+<p>conf/routes</p>
+<pre><code>GET     /    Timeline.index
 </code></pre></section>
             
           </div>
@@ -967,7 +970,7 @@ Primera aproximación listando todos los tweets de la base de datos.</p>
             </aside>
             
             <aside class="page_number">
-              22/46
+              22/49
             </aside>
           </footer>
         </div>
@@ -1015,7 +1018,7 @@ Primera aproximación listando todos los tweets de la base de datos.</p>
             </aside>
             
             <aside class="page_number">
-              23/46
+              23/49
             </aside>
           </footer>
         </div>
@@ -1063,7 +1066,7 @@ Dentro del tag, los argumentos se reciben con _nombreDelParametro. El parámetro
             </aside>
             
             <aside class="page_number">
-              24/46
+              24/49
             </aside>
           </footer>
         </div>
@@ -1102,7 +1105,7 @@ Puedes crearte tus propios módulos.</p>
             </aside>
             
             <aside class="page_number">
-              25/46
+              25/49
             </aside>
           </footer>
         </div>
@@ -1129,7 +1132,8 @@ play eclipsify
 <p>F5 en el proyecto de eclipse</p>
 <p>Añadir rutas por defecto a conf/routes</p>
 <pre><code>*      /                module:secure
-</code></pre></section>
+</code></pre>
+<p><strong>Reiniciar el servidor</strong></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1145,7 +1149,7 @@ play eclipsify
             </aside>
             
             <aside class="page_number">
-              26/46
+              26/49
             </aside>
           </footer>
         </div>
@@ -1200,7 +1204,7 @@ public class Security extends Secure.Security {
             </aside>
             
             <aside class="page_number">
-              27/46
+              27/49
             </aside>
           </footer>
         </div>
@@ -1227,7 +1231,7 @@ play eclipsify
 </code></pre>
 <p>F5 en el proyecto de eclipse</p>
 <p>Añadir rutas por defecto a conf/routes</p>
-<pre><code>*      /                module:crud
+<pre><code>*      /admin           module:crud
 </code></pre></section>
             
           </div>
@@ -1244,7 +1248,7 @@ play eclipsify
             </aside>
             
             <aside class="page_number">
-              28/46
+              28/49
             </aside>
           </footer>
         </div>
@@ -1290,7 +1294,7 @@ public class Users extends CRUD {
             </aside>
             
             <aside class="page_number">
-              29/46
+              29/49
             </aside>
           </footer>
         </div>
@@ -1320,7 +1324,7 @@ public class Users extends CRUD {
             </aside>
             
             <aside class="page_number">
-              30/46
+              30/49
             </aside>
           </footer>
         </div>
@@ -1355,7 +1359,7 @@ public class Users extends CRUD {
             </aside>
             
             <aside class="page_number">
-              31/46
+              31/49
             </aside>
           </footer>
         </div>
@@ -1369,13 +1373,13 @@ public class Users extends CRUD {
             <header><h1>Enviando tweets</h1></header>
             
             
-            <section><p>views/Timeline/timeline.html</p>
+            <section><p>views/Timeline/index.html</p>
 <pre><code>&lt;div class="happening"&gt;
-#{form @Timeline.addTweet()}
+#{form @Timeline.addTweet(), id:"tweet-form"}
     &lt;label&gt;What's happening&lt;/label&gt;
-    &lt;textarea name="tweet.msg"&gt; &lt;/textarea&gt;
+    &lt;textarea name="tweet.msg" id="tweet-msg"&gt; &lt;/textarea&gt;
     &lt;div class="button_container"&gt;
-        &lt;input type="submit" value="Tweet"&gt;
+        &lt;input type="submit" value="Tweet" id="tweet-submit"&gt;
     &lt;/div&gt;
 #{/form}
 &lt;/div&gt;
@@ -1386,7 +1390,7 @@ public class Users extends CRUD {
     tweet.date = new Date();
     tweet.save();
 
-    timeline(); //redirige de nuevo al timeline
+    index(); //redirige de nuevo al timeline
 }
 </code></pre>
 <p>conf/routes</p>
@@ -1407,7 +1411,7 @@ public class Users extends CRUD {
             </aside>
             
             <aside class="page_number">
-              32/46
+              32/49
             </aside>
           </footer>
         </div>
@@ -1436,7 +1440,7 @@ public String msg;
         tweet.date = new Date();
         tweet.save();
     }
-    timeline();
+    index();
 }
 </code></pre></section>
             
@@ -1454,7 +1458,45 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              33/46
+              33/49
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Mostrando errores de validación</h1></header>
+            
+            
+            <section><p>view/Timeline/index.html</p>
+<pre><code>#{ifErrors}
+&lt;ul class="errors"&gt;
+#{errors}
+    &lt;li&gt;${error}&lt;/li&gt;
+#{/errors}
+&lt;/ul&gt;
+#{/ifErrors}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              34/49
             </aside>
           </footer>
         </div>
@@ -1496,7 +1538,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              34/46
+              35/49
             </aside>
           </footer>
         </div>
@@ -1507,7 +1549,7 @@ public String msg;
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Ooopsss</h1></header>
+            <header><h1>Ooops Circular Reference</h1></header>
             
             
             <section><p><img src="img/circularReference.png" /></section>
@@ -1526,7 +1568,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              35/46
+              36/49
             </aside>
           </footer>
         </div>
@@ -1537,7 +1579,7 @@ public String msg;
         <div class="slide">
           <div class="inner">
             
-            <header><h1>¿Por qué da error?</h1></header>
+            <header><h1>El problema con renderJSON</h1></header>
             
             
             <section><p>El problema y la solución está ampliamente explicado en este <a href="http://www.lunatech-research.com/archives/2011/04/20/play-framework-better-json-serialization-flexjson">post</a>.</p>
@@ -1567,7 +1609,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              36/46
+              37/49
             </aside>
           </footer>
         </div>
@@ -1611,7 +1653,41 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              37/46
+              38/49
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Filtrando los campos</h1></header>
+            
+            
+            <section><pre><code>public static void tweets(){
+    List&lt;Tweet&gt; tweets = Tweet.find("order by date desc").fetch();
+    renderJSON(new JSONSerializer().include("msg", "date", "author.username").exclude("*").serialize(tweets));
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              39/49
             </aside>
           </footer>
         </div>
@@ -1652,7 +1728,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              38/46
+              40/49
             </aside>
           </footer>
         </div>
@@ -1707,7 +1783,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              39/46
+              41/49
             </aside>
           </footer>
         </div>
@@ -1744,7 +1820,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              40/46
+              42/49
             </aside>
           </footer>
         </div>
@@ -1765,7 +1841,8 @@ public String msg;
 }
 </code></pre>
 <p>conf/routes</p>
-<pre><code>GET     /api/tweets/{user}             Timeline.tweets
+<pre><code>GET     /{user}                        Timeline.index
+GET     /api/tweets/{user}             Timeline.tweets
 </code></pre></section>
             
           </div>
@@ -1782,7 +1859,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              41/46
+              43/49
             </aside>
           </footer>
         </div>
@@ -1820,7 +1897,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              42/46
+              44/49
             </aside>
           </footer>
         </div>
@@ -1874,7 +1951,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              43/46
+              45/49
             </aside>
           </footer>
         </div>
@@ -1929,7 +2006,7 @@ public String msg;
             </aside>
             
             <aside class="page_number">
-              44/46
+              46/49
             </aside>
           </footer>
         </div>
@@ -1983,7 +2060,7 @@ POST    /unfollow                      Timeline.unfollow
             </aside>
             
             <aside class="page_number">
-              45/46
+              47/49
             </aside>
           </footer>
         </div>
@@ -2030,7 +2107,35 @@ POST    /unfollow                      Timeline.unfollow
             </aside>
             
             <aside class="page_number">
-              46/46
+              48/49
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Y eso es todo...</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              49/49
             </aside>
           </footer>
         </div>
@@ -2238,80 +2343,98 @@ POST    /unfollow                      Timeline.unfollow
       
       
       <tr id="toc-row-34">
-        <th><a href="#slide34">Un poco de AJAX</a></th>
+        <th><a href="#slide34">Mostrando errores de validación</a></th>
         <td><a href="#slide34">34</a></td>
       </tr>
       
       
       <tr id="toc-row-35">
-        <th><a href="#slide35">Ooopsss</a></th>
+        <th><a href="#slide35">Un poco de AJAX</a></th>
         <td><a href="#slide35">35</a></td>
       </tr>
       
       
       <tr id="toc-row-36">
-        <th><a href="#slide36">¿Por qué da error?</a></th>
+        <th><a href="#slide36">Ooops Circular Reference</a></th>
         <td><a href="#slide36">36</a></td>
       </tr>
       
       
       <tr id="toc-row-37">
-        <th><a href="#slide37">Añadiendo una nueva dependencia</a></th>
+        <th><a href="#slide37">El problema con renderJSON</a></th>
         <td><a href="#slide37">37</a></td>
       </tr>
       
       
       <tr id="toc-row-38">
-        <th><a href="#slide38">Cambios en la vista</a></th>
+        <th><a href="#slide38">Añadiendo una nueva dependencia</a></th>
         <td><a href="#slide38">38</a></td>
       </tr>
       
       
       <tr id="toc-row-39">
-        <th><a href="#slide39">Añadiendo javascript</a></th>
+        <th><a href="#slide39">Filtrando los campos</a></th>
         <td><a href="#slide39">39</a></td>
       </tr>
       
       
       <tr id="toc-row-40">
-        <th><a href="#slide40">Añadiendo funcionalidades</a></th>
+        <th><a href="#slide40">Cambios en la vista</a></th>
         <td><a href="#slide40">40</a></td>
       </tr>
       
       
       <tr id="toc-row-41">
-        <th><a href="#slide41">Consultar tweets de otro usuario</a></th>
+        <th><a href="#slide41">Añadiendo javascript</a></th>
         <td><a href="#slide41">41</a></td>
       </tr>
       
       
       <tr id="toc-row-42">
-        <th><a href="#slide42">Timeline</a></th>
+        <th><a href="#slide42">Añadiendo funcionalidades</a></th>
         <td><a href="#slide42">42</a></td>
       </tr>
       
       
       <tr id="toc-row-43">
-        <th><a href="#slide43">Función cargar tweets</a></th>
+        <th><a href="#slide43">Consultar tweets de otro usuario</a></th>
         <td><a href="#slide43">43</a></td>
       </tr>
       
       
       <tr id="toc-row-44">
-        <th><a href="#slide44">Mostrar información de followers</a></th>
+        <th><a href="#slide44">Timeline</a></th>
         <td><a href="#slide44">44</a></td>
       </tr>
       
       
       <tr id="toc-row-45">
-        <th><a href="#slide45">Añadir botón follow y unfollow</a></th>
+        <th><a href="#slide45">Función cargar tweets</a></th>
         <td><a href="#slide45">45</a></td>
       </tr>
       
       
       <tr id="toc-row-46">
-        <th><a href="#slide46">Añadir botón follow y unfollow</a></th>
+        <th><a href="#slide46">Mostrar información de followers</a></th>
         <td><a href="#slide46">46</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-47">
+        <th><a href="#slide47">Añadir botón follow y unfollow</a></th>
+        <td><a href="#slide47">47</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-48">
+        <th><a href="#slide48">Añadir botón follow y unfollow</a></th>
+        <td><a href="#slide48">48</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-49">
+        <th><a href="#slide49">Y eso es todo...</a></th>
+        <td><a href="#slide49">49</a></td>
       </tr>
       
       
