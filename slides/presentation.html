@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Playing with Play</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///Library/Python/2.6/site-packages/landslide-0.8.2-py2.6.egg/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///Library/Python/2.6/site-packages/landslide-0.8.2-py2.6.egg/landslide/themes/default/css/screen.css">
+    
+    
+      
+      <link rel="stylesheet" href="file:///Volumes/Datos/Proyectos/play/tlp/slides/lib/prettify/sons-of-obsidian.css">
+      
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///Library/Python/2.6/site-packages/landslide-0.8.2-py2.6.egg/landslide/themes/default/js/slides.js"></script>
+    
+    
+      
+      <script type="text/javascript" src="file:///Volumes/Datos/Proyectos/play/tlp/slides/lib/prettify/prettify.js"></script>
+      
+    
+      
+      <script type="text/javascript" src="file:///Volumes/Datos/Proyectos/play/tlp/slides/lib/jquery.1.6.2.min.js"></script>
+      
+    
+      
+      <script type="text/javascript" src="file:///Volumes/Datos/Proyectos/play/tlp/slides/lib/app.js"></script>
+      
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Playing with Play</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Autor</h1></header>
+            
+            
+            <section><ul>
+<li>nombre: Axel Hernández Ferrera</li>
+<li>email : <a href="mailto:axelhzf@gmail.com">axelhzf@gmail.com</a></li>
+<li>blog : <a href="http://axelhzf.tumblr.com">http://axelhzf.tumblr.com</a></li>
+<li>twitter: <a href="http://twitter.com/axelhzf">axelhzf</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Playframework</h2></header>
+            
+            
+            <section><ul>
+<li><a href="http://www.playframework.org/">Web oficial</a></li>
+<li><a href="https://github.com/playframework/play">github</a></li>
+<li><a href="http://groups.google.com/group/play-framework">google group</a></li>
+</ul>
+<h1>Características</h1>
+<ul>
+<li>Java puro o <a href="http://scala.playframework.org/">Scala</a></li>
+<li>Hot deploy</li>
+<li>Full stack: Hibernate, memcached, <a href="http://www.playframework.org/modules">sistema de módulos</a></li>
+<li>Compilación automática y errores en el navegador</li>
+<li>REST</li>
+<li>Integración con WebSockets</li>
+<li>Sistema de plantillas basado en groovy</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Play</h2></header>
+            
+            
+            <section><p>¿Aplicación de tareas en 10 minutos?</p>
+<iframe src="http://player.vimeo.com/video/7087610?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="400" height="225" frameborder="0"></iframe>
+
+<p>En el taller conseguiremos hacer...</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Objetivo del taller</h2></header>
+            
+            
+            <section><p>Crear Twitter</p>
+<p><img src="file:///Volumes/Datos/Proyectos/play/tlp/slides/img/ballena.gif" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Instalación de play</h2></header>
+            
+            
+            <section><p>Descargar la última versión desde</p>
+<p><a href="http://www.playframework.org/download">http://www.playframework.org/download</a></p>
+<p>Descromprimir en una carpeta y añadir la ruta al PATH</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Creando el proyecto</h2></header>
+            
+            
+            <section><p>Comados para crear un proyecto nuevo</p>
+<pre><code>play new twitter
+cd twitter
+play run
+</code></pre>
+<p>Abrir <a href="http://localhost:9000/">http://localhost:9000/</a></p>
+<p><img src="file:///Volumes/Datos/Proyectos/play/tlp/slides/img/primega.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Configuración con Eclipse</h2></header>
+            
+            
+            <section><p>Play viene preparado para integrarse con varios <a href="http://www.playframework.org/documentation/1.2.2/ide">IDEs</a>. En el taller utilizaremos Eclipse.</p>
+<p>Genera los archivos de configuración de Eclpse:</p>
+<pre><code>play eclipsify
+</code></pre>
+<p>Importar el proyecto en eclipse:</p>
+<p>File/Import/General/Existing project</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Estructura del proyecto</h2></header>
+            
+            
+            <section><p>Estructura de una aplicación play</p>
+<p><img src="file:///Volumes/Datos/Proyectos/play/tlp/slides/img/estructura.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Primera página</h2></header>
+            
+            
+            <section><p>Creamos el primer controlador</p>
+<p>controller/Application.java</p>
+<pre><code>public static void index() {
+    String msg = "HOLA TLP!";
+    render(msg);
+}
+</code></pre>
+<p>views/Application/index.html</p>
+<pre><code>#{extends 'main.html' /}
+#{set title:'Home' /}
+&lt;h2&gt;${msg}&lt;/h2&gt;
+</code></pre>
+<p>conf/routes</p>
+<pre><code>GET / Application.index
+</code></pre>
+<p><a href="http://localhost:9000/">http://localhost:9000/</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Modelo de datos</h1></header>
+            
+            
+            <section><p><img src="file:///Volumes/Datos/Proyectos/play/tlp/slides/img/modelo.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Clase User</h1></header>
+            
+            
+            <section><pre><code>package models;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import play.db.jpa.Model;
+
+@Entity
+public class User extends Model {
+
+    public String username;
+
+    public String password;
+
+    @ManyToMany
+    public List&lt;User&gt; follows;
+
+    public User(String username, String password) {
+        super();
+        this.username = username;
+        this.password = password;
+        follows = new ArrayList&lt;User&gt;();
+    }
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Clase Tweet</h1></header>
+            
+            
+            <section><pre><code>package models;
+
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import play.db.jpa.Model;
+
+@Entity
+public class Tweet extends Model {
+
+    public String msg;
+
+    @ManyToOne
+    public User author;
+
+    public Date date;
+
+    public Tweet(String msg, User author){
+        this.msg = msg;
+        this.author = author;
+        date = new Date();
+    }
+
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿¿¿ PERO ESTO QUÉ ES ???</h1></header>
+            
+            
+            <section><ul>
+<li>¿Cómo que public? Debería declarar los campos privados y crear los getters y los setters</li>
+<li>¿Dónde están los DAOs? ¿Dónde están los servicios?</li>
+<li>¿Por qué extiendes de la clase Model?</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Modificaciones de bytecode</h1></header>
+            
+            
+            <section><p>Vamos a crear un test para demostrarlo</p>
+<pre><code>import models.User;
+import org.junit.Assert;
+import org.junit.Test;
+import play.test.UnitTest;
+
+public class ByteCode extends UnitTest {
+    @Test
+    public void getter(){
+        User user = new User("tlp", "secret");
+        System.out.println(user.username);
+        Assert.assertEquals("tlp", user.username);
+    }   
+}
+</code></pre>
+<p>Bastante simple, debería funcionar.</p>
+<pre><code>18:14:12,284 INFO  ~ Starting /Volumes/Datos/Proyectos/play/tlp/twitter/.
+18:14:13,085 WARN  ~ You're running Play! in DEV mode
+18:14:14,386 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+18:14:15,140 INFO  ~ Application 'twitter' is now started !
+tlp
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Modificaciones de bytecode</h1></header>
+            
+            
+            <section><p>Si ahora añadimos el getter a la clase User</p>
+<pre><code>public String getUsername(){
+    return "llamada al getter";
+}
+</code></pre>
+<p>Al volver a ejecutar el test ahora falla.</p>
+<pre><code>18:17:15,030 INFO  ~ Starting /Volumes/Datos/Proyectos/play/tlp/twitter/.
+18:17:15,780 WARN  ~ You're running Play! in DEV mode
+18:17:17,035 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+18:17:17,814 INFO  ~ Application 'twitter' is now started !
+llamada al getter
+</code></pre>
+<h2>Ahora se está llamando a getUsername() aunque no hayamos puesto una llamada explicita.</h2>
+<p>* No te olvides de borrar el método getUsername(), era sólo una prueba</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>¿Y los DAOs?</h2></header>
+            
+            
+            <section><p>Al extender de la clase Model, play añade los métodos básicos de CRUD.
+Creamos un nuevo test para probarlo.</p>
+<pre><code>import models.User;
+import org.junit.Assert;
+import org.junit.Test;
+
+import play.db.jpa.GenericModel.JPAQuery;
+import play.test.UnitTest;
+public class ModelTest extends UnitTest {
+
+    @Test
+    public void user(){     
+        User user1 = new User("user1", "secretPassword1234");
+        user1.save();
+
+        User user2 = new User("user2", "ultraSecretPassword");
+        user2.save();
+
+        long numeroUsuario = User.count();
+        Assert.assertEquals(2, numeroUsuario);
+
+        User findUser1 = User.find("byUsername", "user1").first();
+        Assert.assertNotNull(findUser1);
+        Assert.assertEquals("secretPassword1234", findUser1.password);
+    }
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Datos para los test en YAML</h1></header>
+            
+            
+            <section><p>Play incorpora una clase de utilidad que permite cargar datos en la base de datos desde ficheros escritos en YAML.</p>
+<p><strong>*IMPORTANTE:</strong> Al escribir el yaml cuidado con los tabuladores, se utilizan espacios para separar</p>
+<p>test/data.yml</p>
+<pre><code>User(user1):
+   username: user1
+   password: secretPassword1234
+
+User(user2):
+   username: user2
+   password: ultraSecretPassword
+
+Tweet(tweet1):
+    msg: "Este es el primer tweet"
+    author : user1
+
+Tweet(tweet2):
+    msg: "Segundo tweet"
+    author : user2
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Datos para los test en YAML</h1></header>
+            
+            
+            <section><p>Para cargar los datos se utiliza la clase Fixtures.</p>
+<pre><code>public class ModelTest extends UnitTest {
+
+    @Before
+    public void setup(){
+        Fixtures.deleteAllModels();
+        Fixtures.loadModels("data.yml");
+    }
+
+    @Test
+    public void user(){
+        long numeroUsuario = User.count();
+        Assert.assertEquals(2, numeroUsuario);
+
+        User findUser1 = User.find("byUsername", "user1").first();
+        Assert.assertNotNull(findUser1);
+        Assert.assertEquals("secretPassword1234", findUser1.password);
+    }
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Espera... y la base de datos?</h1></header>
+            
+            
+            <section><p>Cuando ejecutamos los test nos aparecía la siguiente línea que indica que estamos utilizando una base de datos en memoria.</p>
+<pre><code>Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+</code></pre>
+<p>En el fichero de configuración conf/application.conf podemos específicar qué base de datos queremos utilizar.</p>
+<pre><code>#Es la configuración utilizada en los test
+%test.db.url=jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+
+#Descomentar esta opción para utilizar la base de datos
+db=mem
+</code></pre>
+<p>Play trae integrado un administrador de base de datos. </p>
+<p><a href="http://localhost:9000/@db">http://localhost:9000/@db</a></p>
+<ul>
+<li>Controlador: org.h2.Driver</li>
+<li>URL: jdbc:h2:mem:play</li>
+<li>Nombre de usuario: sa</li>
+<li>Contraseña: <br />
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Creando el Timeline (Datos iniciales)</h1></header>
+            
+            
+            <section><p>Copia el fichero initial-data.yml en la carpeta conf/</p>
+<p><a href="files/initial-data.yml">Descarga fichero</a></p>
+<p>Crea la clase Bootstrap que se ejecutará cada vez que inicies la aplicación y cargará los datos desde el fichero initial-data.yml</p>
+<p>app/app/Bootstrap.java</p>
+<pre><code>package app;
+
+import models.User;
+import play.jobs.Job;
+import play.jobs.OnApplicationStart;
+import play.test.Fixtures;
+
+@OnApplicationStart
+public class Bootstrap extends Job {
+
+    public void doJob(){
+        if(User.count() == 0){
+            Fixtures.loadModels("initial-data.yml");
+        }
+    }
+
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Creando el Timeline (Controlador)</h1></header>
+            
+            
+            <section><p>Listando todos los tweets.
+Primera aproximación listando todos los tweets de la base de datos.</p>
+<p>app/controller/Timeline.java</p>
+<pre><code>public class Timeline extends Controller {
+
+    public static void index(){
+        List&lt;Tweet&gt; tweets = Tweet.find("order by date desc").fetch();
+        render(tweets);
+    }
+
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Creando el Timeline (Vista)</h1></header>
+            
+            
+            <section><p>app/views/Timeline/index.html</p>
+<pre><code>#{extends 'main.html' /}
+#{set title:'timeline' /}
+
+&lt;h2&gt;Timeline&lt;/h2&gt;
+
+#{if tweets.size() == 0}
+    &lt;p&gt;No hay ningún tweet que mostrar&lt;/p&gt;
+#{/if}
+#{else}
+    #{list items:tweets, as:'tweet'}    
+        &lt;div class="tweet"&gt;
+            &lt;div class="tweet-author"&gt;${tweet.author.username}&lt;/div&gt;
+            &lt;div class="tweet-msg"&gt;${tweet.msg}&lt;/div&gt;
+            &lt;div class="tweet-date"&gt;${tweet.date}&lt;/div&gt;
+        &lt;/div&gt;
+    #{/list}
+#{/else}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Creando el Timeline (Tag)</h1></header>
+            
+            
+            <section><p>Los tags permiten reutilizar código en las visitas.
+Los tags se pueden parametrizar.
+Dentro del tag, los argumentos se reciben con _nombreDelParametro. El parámetro por defecto es _arg</p>
+<p>app/views/tags/tweet.html</p>
+<pre><code>&lt;div class="tweet"&gt;
+    &lt;div class="tweet-author"&gt;${_arg.author.username}&lt;/div&gt;
+    &lt;div class="tweet-msg"&gt;${_arg.msg}&lt;/div&gt;
+    &lt;div class="tweet-date"&gt;${_arg.date}&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>app/views/Timeline/index.html</p>
+<pre><code>...
+
+#{list items:tweets, as:'tweet'}    
+    #{tweet tweet /}    
+#{/list}
+
+...
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Módulos</h1></header>
+            
+            
+            <section><p>Play tiene un sistema muy completo de módulos.
+Un módulo es más que una librería, puede añadir controladores, rutas, recursos.
+Puedes crearte tus propios módulos.</p>
+<p>En esta dirección puedes consultar los módulos disponibles.</p>
+<p><a href="http://www.playframework.org/modules">http://www.playframework.org/modules</a></p>
+<p>En el taller aprenderemos utilizarmos los módulos:</p>
+<ul>
+<li><a href="http://www.playframework.org/documentation/1.2.2/secure">Secure</a></li>
+<li><a href="http://www.playframework.org/documentation/1.2.2/crud">CRUD</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Módulo Secure (Instalación)</h1></header>
+            
+            
+            <section><p><a href="http://www.playframework.org/documentation/1.2.2/secure">Documentación del módulo</a> </p>
+<p>Instalación:</p>
+<p>Añadir dependencia a conf/dependencies.yml</p>
+<pre><code>require:
+    - play -&gt; secure
+</code></pre>
+<p>Ejecutar</p>
+<pre><code>play dependencies
+play eclipsify
+</code></pre>
+<p>F5 en el proyecto de eclipse</p>
+<p>Añadir rutas por defecto a conf/routes</p>
+<pre><code>*      /                module:secure
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Módulo Secure (Uso)</h1></header>
+            
+            
+            <section><p>Uso:  <br />
+</p>
+<pre><code>package controllers;
+...
+
+@With(Secure.class)
+public class Timeline extends Controller {
+ ...
+}
+</code></pre>
+<p>Personalizar mecanismo de seguridad</p>
+<p>controllers/Security.java</p>
+<pre><code>package controllers;
+import models.User;
+public class Security extends Secure.Security {
+    static boolean authenticate(String username, String password) {
+        User user = User.find("byUsername", username).first();
+        return user != null &amp;&amp; user.password.equals(password);
+    }
+
+    static User userConnected(){
+        User user = User.find("byUsername", session.get("username")).first();
+        return user;
+    }   
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Módulo CRUD (Instalación)</h1></header>
+            
+            
+            <section><p><a href="http://www.playframework.org/documentation/1.2.2/crud">Documentación del módulo</a> <br />
+</p>
+<p>Instalación:</p>
+<p>Añadir dependencia a conf/dependencies.yml</p>
+<pre><code>require:
+    - play -&gt; crud
+</code></pre>
+<p>Ejecutar</p>
+<pre><code>play dependencies
+play eclipsify
+</code></pre>
+<p>F5 en el proyecto de eclipse</p>
+<p>Añadir rutas por defecto a conf/routes</p>
+<pre><code>*      /                module:crud
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Módulo CRUD (Uso)</h1></header>
+            
+            
+            <section><p>Crear los siguientes controladores</p>
+<p>controllers/Tweets.java</p>
+<pre><code>package controllers;
+import play.mvc.With;
+@With(Secure.class)
+public class Tweets extends CRUD {  
+}
+</code></pre>
+<p>controllers/User.java</p>
+<pre><code>package controllers;
+import play.mvc.With;
+@With(Secure.class)
+public class Users extends CRUD {
+}
+</code></pre>
+<p>Entrar en <a href="http://localhost:9000/admin">http://localhost:9000/admin</a>  <br />
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Módulo CRUD (Uso)</h1></header>
+            
+            
+            <section><p><img src="file:///Volumes/Datos/Proyectos/play/tlp/slides/img/crud.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Añadiendo estilo</h1></header>
+            
+            
+            <section><p>Copia estos archivos en las rutas indicadas para personalizar el aspecto de la página</p>
+<ul>
+<li><a href="files/logo.png">public/images/logo.png</a></li>
+<li><a href="files/main.css">public/stylesheets/main.css</a></li>
+<li><a href="files/main.html">app/views/main.html</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              31/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Enviando tweets</h1></header>
+            
+            
+            <section><p>views/Timeline/timeline.html</p>
+<pre><code>&lt;div class="happening"&gt;
+#{form @Timeline.addTweet()}
+    &lt;label&gt;What's happening&lt;/label&gt;
+    &lt;textarea name="tweet.msg"&gt; &lt;/textarea&gt;
+    &lt;div class="button_container"&gt;
+        &lt;input type="submit" value="Tweet"&gt;
+    &lt;/div&gt;
+#{/form}
+&lt;/div&gt;
+</code></pre>
+<p>controller/Timeline.java</p>
+<pre><code>public static void addTweet(Tweet tweet){
+    tweet.author = Security.userConnected();
+    tweet.date = new Date();
+    tweet.save();
+
+    timeline(); //redirige de nuevo al timeline
+}
+</code></pre>
+<p>conf/routes</p>
+<pre><code>POST    /addTweet                      Timeline.addTweet
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Validación</h1></header>
+            
+            
+            <section><p>models/Tweet.java</p>
+<pre><code>@MaxLength(140)
+@Required
+public String msg;
+</code></pre>
+<p>controllers/Timeline.java</p>
+<pre><code>public static void addTweet(@Valid Tweet tweet) {
+    if (validation.hasErrors()) {
+        params.flash();
+        validation.keep();
+    } else {
+        tweet.author = Security.userConnected();
+        tweet.date = new Date();
+        tweet.save();
+    }
+    timeline();
+}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              33/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Un poco de AJAX</h1></header>
+            
+            
+            <section><p>Añadimos un nuevo método en Timeline.java</p>
+<pre><code>public static void tweets(){
+    List&lt;Tweet&gt; tweets = Tweet.find("order by date desc").fetch();
+    renderJSON(tweets);
+}
+</code></pre>
+<p>renderJSON - Renderiza un objeto en formato JSON</p>
+<p>Añadimos la ruta</p>
+<pre><code>GET     /api/tweets                              Timeline.tweets
+</code></pre>
+<p>Accedemos a la página</p>
+<p><a href="http://localhost:9000/tweetList">http://localhost:9000/tweetList</a><br />
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              34/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Ooopsss</h1></header>
+            
+            
+            <section><p><img src="file:///Volumes/Datos/Proyectos/play/tlp/slides/img/circularReference.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              35/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿Por qué da error?</h1></header>
+            
+            
+            <section><p>El problema y la solución está ampliamente explicado en este <a href="http://www.lunatech-research.com/archives/2011/04/20/play-framework-better-json-serialization-flexjson">post</a>.</p>
+<p>En resumen:</p>
+<ul>
+<li>El método renderJSON utiliza la librería <a href="http://code.google.com/p/google-gson/">GSON</a> para transformar el objeto a JSON. Esta librería hace una serialización en profundidad.</li>
+<li>En nuestro caso, las referencias a los followeres de un usuario, provocan un error de referencia circular.</li>
+<li>Además utilizando la librería se envían todos los campos, por ejemplo se estaría enviando las contraseñas.</li>
+</ul>
+<p>Soluciones:</p>
+<ul>
+<li>Crear un objeto intermedio que contenga únicamente la información que se debe enviar</li>
+<li>Utilizar la librería <a href="http://flexjson.sourceforge.net/">flexjson</a> que nos permite especificar qué campos queremos serializar. Esta será la opción que utilizaremos.</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              36/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Añadiendo una nueva dependencia</h1></header>
+            
+            
+            <section><p>conf/dependencies.yml</p>
+<pre><code>require:
+    - play
+    - play -&gt; secure
+    - play -&gt; crud
+    - net.sf.flexjson -&gt; flexjson 2.1
+</code></pre>
+<p>y ejecutar</p>
+<pre><code>play dependencies
+</code></pre>
+<p>Con esto play se descargará la librería desde el repositorio central de maven.<br />
+</p>
+<p>Por último actualizamos la configuración de eclipse</p>
+<pre><code>play eclipsify
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              37/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Cambios en la vista</h1></header>
+            
+            
+            <section><p>views/Timeline/index.html</p>
+<pre><code>&lt;div class="happening"&gt;
+&lt;form  id="tweet-form"&gt;
+    &lt;label&gt;What's happening&lt;/label&gt;
+    &lt;textarea id="tweet-msg" name="tweet.msg"&gt; &lt;/textarea&gt;
+    &lt;div class="button_container"&gt;
+        &lt;input type="submit" value="Tweet" id="tweet-submit"&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;  
+&lt;div id="tweets"&gt;&lt;/div&gt;
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              38/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Añadiendo javascript</h1></header>
+            
+            
+            <section><p>view/Timeline/timeline.html</p>
+<pre><code>&lt;script&gt;
+    function cargarTweets(){
+        var listAction = #{jsAction @Timeline.tweets() /}
+        $.get(listAction({}), function(data){
+            var html = '';
+            $.each(data, function(i, tweet) {
+                var date = new Date(tweet.date);
+                html += '&lt;div class="tweet"&gt;&lt;div class="tweet-author"&gt;&lt;a href="/' + tweet.author.username + '"&gt; ' + tweet.author.username +'&lt;/a&gt;&lt;/div&gt;&lt;div class="tweet-msg"&gt; ' + tweet.msg + '&lt;/div&gt;&lt;div class="tweet-date"&gt; ' + date.toLocaleDateString() + '&lt;/div&gt;&lt;/div&gt;'
+            });
+            $('#tweets').html(html);
+        });
+    }
+
+    $(function(){
+        cargarTweets();
+        $('#tweet-submit').click(function(){
+            $.post('@{Timeline.addTweet}', $('#tweet-form').serialize(), function(){
+                $('#tweet-msg').val('');
+                cargarTweets();
+            });
+            return false;
+        });
+    });
+&lt;/script&gt;
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              39/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Añadiendo funcionalidades</h1></header>
+            
+            
+            <section><p>Por ahora esto no es twitter sino un sitio donde los usuarios pueden dejar sus mensajes.</p>
+<p>Objetivos:</p>
+<ul>
+<li>Poder consultar los tweets de otro usuario</li>
+<li>Limitar los tweets del timeline a los propios y a los de personas que sigue</li>
+<li>Mostrar información de followers</li>
+<li>Añadir botón follow y unfollow</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              40/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Consultar tweets de otro usuario</h1></header>
+            
+            
+            <section><p>controller.Timeline</p>
+<pre><code>public static void tweets(String user){
+    List&lt;Object&gt; tweets = Tweet.find("select tweet from Tweet tweet where tweet.author.username = ? order by tweet.date desc", user).fetch();
+    renderJSON(new JSONSerializer().include("msg", "date", "author.username").exclude("*").serialize(tweets));
+}
+</code></pre>
+<p>conf/routes</p>
+<pre><code>GET     /api/tweets/{user}             Timeline.tweets
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              41/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Timeline</h1></header>
+            
+            
+            <section><p>controller.Timeline</p>
+<pre><code>public static void timeline(){
+    List&lt;Object&gt; tweets = Tweet.find("select tweet from Tweet tweet, User user where user = ? and (tweet.author = user or tweet.author member of user.follows) order by tweet.date desc", Security.userConnected()).fetch();
+    renderJSON(new JSONSerializer().include("msg", "date", "author.username").exclude("*").serialize(tweets));
+}
+</code></pre>
+<p>conf/routes</p>
+<pre><code>GET     /api/timeline                  Timeline.timeline
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              42/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Función cargar tweets</h1></header>
+            
+            
+            <section><pre><code>&lt;script&gt;
+    function cargarTweets(){
+        #{if user != null}
+            *{Consulta los tweets de otra persona}*
+            var listAction = #{jsAction @Timeline.tweets(':user') /}
+            var url = listAction({user:'${usuarioConsultado.username}'})
+        #{/if}
+        #{else}
+            *{Consulta el timeline del usuario}*
+            var listAction = #{jsAction @Timeline.timeline() /}
+            var url = listAction({})            
+        #{/else}
+
+        $.get(url, function(data){
+            var html = '';
+            $.each(data, function(i, tweet) {
+                var date = new Date(tweet.date);
+                html += '&lt;div class="tweet"&gt;&lt;div class="tweet-author"&gt;&lt;a href="/' + tweet.author.username + '"&gt; ' + tweet.author.username +'&lt;/a&gt;&lt;/div&gt;&lt;div class="tweet-msg"&gt; ' + tweet.msg + '&lt;/div&gt;&lt;div class="tweet-date"&gt; ' + date.toLocaleDateString() + '&lt;/div&gt;&lt;/div&gt;'
+            });
+            $('#tweets').html(html);
+        });
+    }
+    ...
+&lt;/script&gt;
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              43/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Mostrar información de followers</h1></header>
+            
+            
+            <section><p>controller.Timeline</p>
+<pre><code>public static void index(String user) {
+    User usuarioConsultado = null;
+    User usuarioConectado = Security.userConnected();
+
+    if(user != null) {
+        usuarioConsultado = User.find("byUsername", user).first();
+    }else {
+        usuarioConsultado = Security.userConnected();
+    }
+
+    //Información
+    long followings = User.count("select count(follow) from User user join user.follows follow where user = ?", usuarioConsultado);
+    long followers = User.count("select count(user) from User user where ? member of user.follows", usuarioConsultado);
+
+    render(user, usuarioConectado, usuarioConsultado, followings, followers);
+}
+</code></pre>
+<p>views/Timeline/index.html</p>
+<pre><code>&lt;div id="follow-info"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Follower: ${followers}&lt;/li&gt;
+        &lt;li&gt;Following: ${followings}&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              44/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Añadir botón follow y unfollow</h1></header>
+            
+            
+            <section><p>controller/Timeline.java</p>
+<pre><code>public static void follow(String user){
+    User usuarioConectado = Security.userConnected();
+    User usuarioConsultado = User.find("byUsername", user).first();
+
+    usuarioConectado.follows.add(usuarioConsultado);
+    usuarioConectado.save();
+
+    index(null);
+}
+
+public static void unfollow(String user){
+    User usuarioConectado = Security.userConnected();
+    User usuarioConsultado = User.find("byUsername", user).first();
+
+    usuarioConectado.follows.remove(usuarioConsultado);
+    usuarioConectado.save();
+
+    index(null);
+}
+</code></pre>
+<p>conf/routes</p>
+<pre><code>POST    /follow                        Timeline.follow
+POST    /unfollow                      Timeline.unfollow
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              45/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Añadir botón follow y unfollow</h1></header>
+            
+            
+            <section><p>views/Timeline/index.html</p>
+<pre><code>#{if usuarioConectado != usuarioConsultado}
+&lt;div&gt;
+    #{if usuarioConectado.follows.contains(usuarioConsultado)}
+        #{form @Timeline.unfollow()}
+            &lt;input type="hidden" name="user" value="${usuarioConsultado.username}"&gt;
+            &lt;input type="submit" value="Unfollow!"/&gt;
+        #{/form}
+    #{/if}
+    #{else}
+        #{form @Timeline.follow()}
+            &lt;input type="hidden" name="user" value="${usuarioConsultado.username}"&gt;
+            &lt;input type="submit" value="Follow!"/&gt;
+        #{/form}
+    #{/else}
+&lt;/div&gt;
+#{/if}
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              46/46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source:  -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="page_number">
+              /46
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Playing with Play</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Autor</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">Playframework</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
+        <tr id="toc-row-4" class="sub">
+          <th><a href="#slide4">Play</a></th>
+          <td><a href="#slide4">4</a></td>
+        </tr>
+        
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">Objetivo del taller</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6">Instalación de play</a></th>
+          <td><a href="#slide6">6</a></td>
+        </tr>
+        
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">Creando el proyecto</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
+        <tr id="toc-row-8" class="sub">
+          <th><a href="#slide8">Configuración con Eclipse</a></th>
+          <td><a href="#slide8">8</a></td>
+        </tr>
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">Estructura del proyecto</a></th>
+          <td><a href="#slide9">9</a></td>
+        </tr>
+        
+        <tr id="toc-row-10" class="sub">
+          <th><a href="#slide10">Primera página</a></th>
+          <td><a href="#slide10">10</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Modelo de datos</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Clase User</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Clase Tweet</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">¿¿¿ PERO ESTO QUÉ ES ???</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Modificaciones de bytecode</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Modificaciones de bytecode</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-17" class="sub">
+          <th><a href="#slide17">¿Y los DAOs?</a></th>
+          <td><a href="#slide17">17</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Datos para los test en YAML</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Datos para los test en YAML</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Espera... y la base de datos?</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Creando el Timeline (Datos iniciales)</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Creando el Timeline (Controlador)</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Creando el Timeline (Vista)</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Creando el Timeline (Tag)</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Módulos</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Módulo Secure (Instalación)</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Módulo Secure (Uso)</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Módulo CRUD (Instalación)</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Módulo CRUD (Uso)</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Módulo CRUD (Uso)</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Añadiendo estilo</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Enviando tweets</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Validación</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">Un poco de AJAX</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Ooopsss</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">¿Por qué da error?</a></th>
+        <td><a href="#slide36">36</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-37">
+        <th><a href="#slide37">Añadiendo una nueva dependencia</a></th>
+        <td><a href="#slide37">37</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-38">
+        <th><a href="#slide38">Cambios en la vista</a></th>
+        <td><a href="#slide38">38</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-39">
+        <th><a href="#slide39">Añadiendo javascript</a></th>
+        <td><a href="#slide39">39</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-40">
+        <th><a href="#slide40">Añadiendo funcionalidades</a></th>
+        <td><a href="#slide40">40</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-41">
+        <th><a href="#slide41">Consultar tweets de otro usuario</a></th>
+        <td><a href="#slide41">41</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-42">
+        <th><a href="#slide42">Timeline</a></th>
+        <td><a href="#slide42">42</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-43">
+        <th><a href="#slide43">Función cargar tweets</a></th>
+        <td><a href="#slide43">43</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-44">
+        <th><a href="#slide44">Mostrar información de followers</a></th>
+        <td><a href="#slide44">44</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-45">
+        <th><a href="#slide45">Añadir botón follow y unfollow</a></th>
+        <td><a href="#slide45">45</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-46">
+        <th><a href="#slide46">Añadir botón follow y unfollow</a></th>
+        <td><a href="#slide46">46</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
