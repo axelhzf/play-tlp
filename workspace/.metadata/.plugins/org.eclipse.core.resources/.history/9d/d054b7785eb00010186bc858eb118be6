@@ -1,0 +1,24 @@
+import models.User;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import play.test.UnitTest;
+
+
+public class DaoTest extends UnitTest {
+
+	@Test
+	public void daoTest(){
+		User user1 = new User("user1", "user1");
+		user1.save();
+		
+		User user2 = new User("user2", "user2");
+		user2.save();
+		
+		long numeroUsuarios = User.count();
+		Assert.assertEquals(2, numeroUsuarios);
+		
+	}
+	
+}

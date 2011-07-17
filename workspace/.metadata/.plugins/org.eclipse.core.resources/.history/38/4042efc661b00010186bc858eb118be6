@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'timeline' /}
+
+<h2>Timeline</h2>
+
+#{if tweets.size() == 0}
+    <p>No hay ningún tweet que mostrar</p>
+#{/if}
+#{else}
+    #{list items:tweets, as:'tweet'}    
+		#{tweet tweet/}
+    #{/list}
+#{/else}

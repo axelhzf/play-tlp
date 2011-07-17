@@ -1,0 +1,15 @@
+User(user1):
+   username: user1
+   password: secretPassword1234
+
+User(user2):
+   username: user2
+   password: ultraSecretPassword
+
+Tweet(tweet1):
+    msg: "Este es el primer tweet"
+    author : user1
+
+Tweet(tweet2):
+    msg: "Segundo tweet"
+    author : user2

@@ -1,0 +1,13 @@
+import org.junit.Test;
+
+import play.test.UnitTest;
+
+
+public class DaoTest extends UnitTest {
+
+	@Test
+	public void daoTest(){
+		
+	}
+	
+}

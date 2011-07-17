@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+*       / module:secure
+*       /admin module:crud
+
+# Home page
+GET     /{user}                                 Timeline.index
+POST    /addTweet                               Timeline.addTweet
+GET     /api/tweets/{user}   Timeline.tweets
+GET     /api/timeline        Timeline.timeline
+
+POST    /follow                        Timeline.follow
+POST    /unfollow                      Timeline.unfollow
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

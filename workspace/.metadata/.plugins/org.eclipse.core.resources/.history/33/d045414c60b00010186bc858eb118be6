@@ -1,0 +1,15 @@
+package controllers;
+
+import java.util.List;
+
+import models.Tweet;
+import play.mvc.Controller;
+
+public class Timeline extends Controller {
+
+	public static void index(){
+		List<Tweet> tweets = Tweet.find("order by date desc").fetch();
+		render(tweets);
+	}
+	
+}
