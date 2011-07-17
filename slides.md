@@ -948,6 +948,14 @@ views/Timeline/index.html
 
 ---
 
+# Proyecto terminado
+
+Si no te dio tiempo de terminar el proyecto puedes ver el código completo en 
+
+[https://github.com/axelhzf/play-tlp](https://github.com/axelhzf/play-tlp)
+
+---
+
 # Gracias
 
 Contacto:
