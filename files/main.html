@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+    	<header>
+    		<a id="logo" href="/">Twitter tlp</a>
+    		
+    		
+    		<div class="connected-user">${controllers.Security.connected()} - #{a @Secure.logout()}Salir#{/a}</div>
+    	</header>
+    	
+    	<div class="wrapper">
+        #{doLayout /}
+        </div>
+    </body>
+</html>
