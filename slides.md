@@ -51,7 +51,7 @@ Descargar la última versión desde
 
 [http://www.playframework.org/download](http://www.playframework.org/download)
 
-Descromprimir en una carpeta y añadir la ruta al PATH
+Descomprimir en una carpeta y añadir la ruta al PATH
 
 
 ---
@@ -948,5 +948,12 @@ views/Timeline/index.html
 
 ---
 
-# Y eso es todo...
+# Gracias
+
+Contacto:
+
+* nombre: Axel Hernández Ferrera
+* email : [axelhzf@gmail.com](mailto:axelhzf@gmail.com)
+* blog : [http://axelhzf.tumblr.com](http://axelhzf.tumblr.com)
+* twitter: [axelhzf](http://twitter.com/axelhzf)
 	
