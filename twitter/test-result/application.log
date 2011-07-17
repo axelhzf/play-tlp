@@ -1,4 +1,0 @@
-17 jul 2011 11:24:30,906 INFO  ~ Starting /Volumes/Datos/Proyectos/play/tlp/twitter/.
-17 jul 2011 11:24:31,655 WARN  ~ You're running Play! in DEV mode
-17 jul 2011 11:24:32,929 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
-17 jul 2011 11:24:33,583 INFO  ~ Application 'twitter' is now started !
