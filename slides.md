@@ -433,7 +433,7 @@ app/views/Timeline/index.html
 	
 # Creando el Timeline (Tag)
 
-Los tags permiten reutilizar código en las visitas.
+Los tags permiten reutilizar código en las vistas.
 Los tags se pueden parametrizar.
 Dentro del tag, los argumentos se reciben con _nombreDelParametro. El parámetro por defecto es _arg
 
