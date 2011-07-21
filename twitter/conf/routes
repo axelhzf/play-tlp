@@ -5,6 +5,9 @@
 *       / module:secure
 *       /admin module:crud
 
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
 # Home page
 GET     /                                 Timeline.index
 GET     /{user}                                 Timeline.index
@@ -15,8 +18,7 @@ GET     /api/timeline        Timeline.timeline
 POST    /follow                        Timeline.follow
 POST    /unfollow                      Timeline.unfollow
 
-# Ignore favicon requests
-GET     /favicon.ico                            404
+
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
